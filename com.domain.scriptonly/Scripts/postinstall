@@ -1,0 +1,22 @@
+#!/bin/bash
+## postinstall
+
+pathToScript=$0
+pathToPackage=$1
+targetLocation=$2
+targetVolume=$3
+
+PACKAGE_NAME=( `basename $PACKAGE_PATH .pkg` )
+
+doLog ()
+{
+	echo "$PACKAGE_NAME - $1"
+	logger -is "$PACKAGE_NAME - $1"
+}
+
+# doLog "thething"
+
+doLog "PACKAGE_PATH: $PACKAGE_PATH"
+doLog "PACKAGE_NAME: $PACKAGE_NAME"
+
+
